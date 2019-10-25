@@ -7,6 +7,16 @@ require 'directors_database'
 
 def directors_totals(nds)
   
+  i = 0 
+  directors_hash = {}
+  while i < nds.length do
+    directors_gross = gross_for_director(nds[i])
+    directors_name = nds[i][:name]
+    directors_hash[directors_name] = directors_gross
+    i += 1
+  end
+  return directors_hash
+  
 end
 
 # Find a way to accumulate the :worldwide_grosses and return that Integer
