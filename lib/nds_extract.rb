@@ -7,15 +7,15 @@ require 'directors_database'
 
 def directors_totals(nds)
   
-  i = 0 
   directors_hash = {}
-  while i < nds.length do
+  nds.length.times do |i|
     directors_gross = gross_for_director(nds[i])
     directors_name = nds[i][:name]
     directors_hash[directors_name] = directors_gross
     i += 1
   end
-  return directors_hash
+  
+  directors_hash
   
 end
 
@@ -31,6 +31,6 @@ def gross_for_director(director_data)
     moviecounter += 1
   end 
   
-  return director_gross
+  director_gross
   
 end
