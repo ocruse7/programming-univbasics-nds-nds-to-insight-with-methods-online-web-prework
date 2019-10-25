@@ -24,8 +24,9 @@ def gross_for_director(director_data)
   
   director_gross = 0
   number_of_movies = director_data[:movies].length
-  director_data[:movies].length.times do
-    gross_of_movie = director_data[:movies][moviecounter][:worldwide_gross]
+  
+  director_data[:movies].length.times do |i|
+    gross_of_movie = director_data[:movies][i][:worldwide_gross]
     director_gross += gross_of_movie
     moviecounter += 1
   end 
